@@ -1,0 +1,56 @@
+.signInModal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(256, 256, 256, 0.25);
+    z-index: 99999;
+    animation: fadeIn 0.5s 1;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.signInModalContent {
+    background-color: rgba(150, 150, 150, 0.85);
+    border-radius: 5px;
+    color: black;
+    animation: signInFromTop 0.5s 1;
+}
+
+@keyframes signInFromTop {
+    0% {position:fixed; bottom: 100%; opacity: 0}
+    100% {position: fixed; bottom: 37%; opacity: 1;}
+}
+
+.signInForm {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInForm input{
+    height: 1.5rem;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signInForm button {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+

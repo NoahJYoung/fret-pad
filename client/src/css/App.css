@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald";
+}
+
+html {
+  background: rgba(50,50,50, 0.95);
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: radial-gradient(circle, rgba(222,222,222,1) 0%, rgba(128,128,128,1) 35%, rgba(50,50,50,1) 100%);
+}
+
+#mainCont {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem 0.5 0.5rem;
+  background-color: rgba(256, 256, 256, 0.5)
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.5rem;
+  z-index: -1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.diagramContainer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 769px) {
+  #mainCont {
+    padding: 0.5rem;
+    align-self: center;
+    margin: 0 1rem 3rem 1rem;
+    height: 90vh;
+    width: 800px;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #mainCont {
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+    height: 80vh;
+    margin: 0 0rem 3rem 0rem;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@page {
+  size: A4;
+}
+
+@media print {
+  
+  html {
+    background: white;
+  }
+  #App {
+    background: white !important;
+  }
+  #mainCont {
+    -webkit-print-color-adjust: exact;
+    border: none;
+    margin: none;
+    background-color: white;
+  }
+
+  .sectionContainer, .titleDiv, .chordCont {
+    max-height: 180px;
+  }
+
+  .btnContainer {
+    height: 0;
+    width: 0;
+  }
+
+  .noPrint {
+    display: none !important;
+  }
+
+  .sectionContainer,
+  .chordCont {
+    break-inside: avoid;
+    break-after: always;
+  }
+
+  .titleDiv,
+  .chordName {
+    page-break-before: always;
+    break-inside: avoid;
+  }
+
+  ::-webkit-input-placeholder {
+    color: transparent;
+  }
+  :-moz-placeholder {
+    color: transparent;
+  }
+  ::-moz-placeholder {
+    color: transparent;
+  }
+  :-ms-input-placeholder {
+    color: transparent;
+  }
+}

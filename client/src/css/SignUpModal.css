@@ -1,0 +1,56 @@
+.signUpModal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(256, 256, 256, 0.25);
+    z-index: 99999;
+    animation: fadeIn 0.5s 1;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.signUpModalContent {
+    background-color: rgba(150, 150, 150, 0.85);
+    border-radius: 5px;
+    color: black;
+    animation: signUpfromTop 0.5s 1;
+}
+
+@keyframes signUpfromTop {
+    0% {position:fixed; bottom: 100%; opacity: 0}
+    100% {position: fixed; bottom: 34%; opacity: 1;}
+}
+
+.signUpForm {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpForm input{
+    height: 1.5rem;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signUpForm button {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+

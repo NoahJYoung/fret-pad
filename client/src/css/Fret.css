@@ -1,0 +1,131 @@
+.Fret {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7.5rem;
+  width: 4rem;
+  border-right: 2px solid #424242;
+  border-radius: 3px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.Fret1 {
+  width: 100%;
+}
+
+.Fret2 {
+  width: 97%;
+}
+
+.Fret3 {
+  width: 94%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(102, 102, 102),
+    rgb(102, 102, 102) 9%,
+    transparent 9%
+  );
+}
+
+.Fret4 {
+  width: 91%;
+}
+
+.Fret5 {
+  width: 88%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(102, 102, 102),
+    rgb(102, 102, 102) 9%,
+    transparent 9%
+  );
+}
+
+.Fret6 {
+  width: 85%;
+}
+
+.Fret7 {
+  width: 82%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(102, 102, 102),
+    rgb(102, 102, 102) 9%,
+    transparent 9%
+  );
+}
+
+.Fret8 {
+  width: 79%;
+}
+
+.Fret9 {
+  width: 76%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(102, 102, 102),
+    rgb(102, 102, 102) 9%,
+    transparent 9%
+  );
+}
+
+.Fret10 {
+  width: 73%;
+}
+
+.Fret11 {
+  width: 70%;
+}
+
+.Fret12 {
+  width: 67%;
+  background: radial-gradient(
+      circle at 50% 27.5%,
+      rgb(102, 102, 102),
+      rgb(102, 102, 102) 8%,
+      transparent 8%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 50% 72.5%,
+      rgb(102, 102, 102),
+      rgb(102, 102, 102) 8%,
+      transparent 8%,
+      transparent
+    );
+}
+
+.Fret13 {
+  width: 64%;
+}
+
+.Fret14 {
+  width: 61%;
+}
+
+.Fret15 {
+  width: 58%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(102, 102, 102),
+    rgb(102, 102, 102) 9%,
+    transparent 9%
+  );
+}
+
+.Fret16 {
+  width: 55%;
+}
+
+.Fret17 {
+  width: 52%;
+  border-right: none;
+  border-radius: 3px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(102, 102, 102),
+    rgb(102, 102, 102) 9%,
+    transparent 9%
+  );
+}

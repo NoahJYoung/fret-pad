@@ -1,0 +1,23 @@
+.fretMarker, .fretMarkerInput {
+    font-size: 0.65rem;
+    position: absolute;
+    top: 21%;
+    left: -10%;
+    outline: none;
+    background: transparent;
+    max-width: 1rem;
+    cursor: pointer;
+}
+
+.fretMarker:hover {
+    opacity: 0.5;
+}
+
+@media print {
+    .fretMarker, .fretMarkerInput {
+        font-size: 0.65rem;
+        position: absolute;
+        top: 23%;
+        left: -10%;
+    }
+}

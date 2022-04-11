@@ -1,0 +1,26 @@
+.titleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pageTitle,
+.pageTitleInput {
+  margin: 3rem 1rem 3rem 1rem;
+  padding: 0;
+  width: fit-content;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-family: "Oswald";
+  background-color: transparent;
+}
+
+.pageTitleInput:focus {
+  outline: none;
+}
+
+.pageTitle:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

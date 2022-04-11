@@ -1,0 +1,86 @@
+.ChordDiagram {
+  width: 7.5rem;
+  height: 7rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chordName {
+  background: transparent;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "Oswald";
+}
+
+.chordName input {
+  background: transparent;
+  font-size: 1.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  outline: transparent;
+  text-align: center;
+  max-width: 7.5rem;
+  font-family: "Oswald";
+}
+
+.chordName h2 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  font-family: "Oswald";
+}
+
+.diagramName {
+  cursor: pointer;
+}
+.diagramName:hover {
+  opacity: 0.5;
+}
+
+textarea:focus,
+input,
+input:focus {
+  border: none;
+}
+
+.chordCont {
+  margin: 0.5rem 1rem 0 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.openCloseCont {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 769px) {
+  .chordSectionContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .chordSectionContainer {
+    white-space: nowrap;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .chordSectionContainer::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,40 @@
+.chordString6 {
+  border-right: 6px solid #424242;
+}
+
+.chordString5 {
+  border-right: 5px solid #424242;
+}
+
+.chordString4 {
+  border-right: 4px solid #424242;
+}
+
+.chordString3 {
+  border-right: 3px solid #424242;
+}
+
+.chordString2 {
+  border-right: 2px solid #424242;
+}
+
+.chordString1 {
+  border-right: 1px solid #424242;
+}
+
+.stringCont {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.chordString {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.stringCont:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

@@ -1,0 +1,14 @@
+.chordFret {
+  border-bottom: 1px solid #424242;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.chordFret1 {
+  border-top: 1px solid #424242;
+}
+
+.chordFret {
+  height: 20%;
+}
