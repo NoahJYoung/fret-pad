@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialStateValue = {
+  user: null,
   title: "",
   diagrams: [],
   settings: { sound: true },
 };
-let savedPage = [];
 
 export const appSlice = createSlice({
   name: "app",
   initialState: { value: initialStateValue },
   reducers: {
+    login: (state, action) => {
+      state.value.user = action.payload;
+    },
+    logout: (state) => {
+      state.value.user = null;
+    },
     editTitle: (state, action) => {
       state.value.title = action.payload;
     },
@@ -27,13 +33,13 @@ export const appSlice = createSlice({
     },
     clearDiagrams: (state) => {
       state.value.diagrams = [];
+      state.value.title = "";
     },
-    load: (state) => {
-      state.value = JSON.parse(savedPage);
+    load: (state, action) => {
+      state.value.title = action.payload.title;
+      state.value.diagrams = action.payload.diagrams;
     },
-    save: (state) => {
-      savedPage = JSON.stringify(state.value);
-    },
+
     changePagePos: (state, action) => {
       let stateCopy = JSON.stringify(state.value.diagrams);
       let newArr = JSON.parse(stateCopy);
@@ -71,18 +77,19 @@ export const appSlice = createSlice({
       } else {
         state.value.settings.sound = true;
       }
-    }
+    },
   },
 });
 
 export const {
+  login,
+  logout,
   editTitle,
   updateTitle,
   addDiagram,
   removeDiagram,
   clearDiagrams,
   load,
-  save,
   toggle,
   changePagePos,
   setFretMarker,

@@ -1,0 +1,92 @@
+.documentSelectionModal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(256, 256, 256, 0.25);
+    z-index: 99999;
+}
+
+.documentSelectionModal button {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0.1rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.documentSelectionModal p {
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.documentSelectionModal button:hover {
+    opacity: 0.5;
+}
+
+.innerDocModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listContainer {
+    background: rgba(120, 120, 120, 0.75);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    list-style: none;
+    width: 20rem;
+    min-height: 10rem;
+    max-height: 20rem;
+}
+
+.docList {
+    overflow-y: scroll;
+    height: 8rem;
+}
+
+.docModalClose {
+    width: 3rem;
+    align-self: center;
+    margin: 0.5rem;
+    
+}
+
+.docList li {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    padding: 0.25rem 0 0.25rem 0;
+    border-bottom: 1px solid black;
+    align-items: center;
+    text-align: center;
+}
+
+.buttonDiv {
+    display: flex;
+}
+
+.docDeleteBtn {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+
+.docDeleteImg {
+    min-width: 1rem;
+}
+
+.lightBackground {
+    background: rgba(180, 180, 180, 0.75);
+}
+
+.darkBackground {
+    background: rgba(160, 160, 160, 0.75);
+}

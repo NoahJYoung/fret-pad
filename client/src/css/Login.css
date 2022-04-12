@@ -5,14 +5,25 @@
     margin-right: 1.5rem;
 }
 
-.login button {
+.login button, .logoutBtn {
     font-size: 1.25rem;
     cursor: pointer;
     border-radius: 5px;
     padding: 0.25rem;
 }
 
-.login button:hover {
+.login button:hover, .logoutBtn:hover {
     background: #FD5151;
     color: white;
+}
+
+.userPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.userPanel h1 {
+    font-size: 1.25rem;
 }

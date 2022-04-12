@@ -1,15 +1,9 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { loadImage } from "../assets/images";
-import { load } from "../features/appSlice";
 
-const LoadButton = () => {
-  const dispatch = useDispatch();
+const LoadButton = (props) => {
   return (
-    <button
-      className="loadBtn toolbarBtn"
-      onClick={() => dispatch(load())}
-    >
+    <button onClick={props.onClick} className="loadBtn toolbarBtn">
       <img className="saveImage" alt="save page" src={loadImage} />
     </button>
   );
