@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import Fret from "./Fret";
-import DiagramName from "./DiagramName";
-import DiagramButtons from "./DiagramButtons";
-import "../css/Fretboard.css";
+import DiagramName from "../shared/DiagramName";
+import DiagramButtons from "../shared/DiagramButtons";
+import "../../../css/Fretboard.css";
 
 const Fretboard = ({ pageIndex }) => {
   const [diagramOpacity, setdiagramOpacity] = useState("1");

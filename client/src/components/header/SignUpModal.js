@@ -1,11 +1,10 @@
 import { React } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
-import { login } from "../features/appSlice";
-import "../css/SignUpModal.css";
+import { login } from "../../features/appSlice";
+import "../../css/SignUpModal.css";
 
 const SignUpModal = (props) => {
-  const state = useSelector((state) => state.value.user);
   const dispatch = useDispatch();
   if (!props.show) {
     return null;
@@ -17,10 +16,17 @@ const SignUpModal = (props) => {
       axios
         .post("http://localhost:9000/new-user", {
           email: event.target.email.value,
+          username: event.target.username.value,
           password: event.target.pass.value,
         })
         .then((res) => {
-          const user = { email: res.data.email, documents: res.data.documents };
+          const user = {
+            email: res.data.email,
+            username: res.data.username,
+            password: res.data.password,
+            id: res.data._id,
+            documents: res.data.documents,
+          };
           dispatch(login(user));
           props.onClose();
         });
@@ -40,6 +46,8 @@ const SignUpModal = (props) => {
         >
           <label htmlFor="email">Email:</label>
           <input name="email" type="email" required />
+          <label htmlFor="username">Username:</label>
+          <input type="text" name="username" required />
           <label htmlFor="pass">Password:</label>
           <input name="pass" type="password" required />
           <label htmlFor="passConfirm">Confirm password: </label>

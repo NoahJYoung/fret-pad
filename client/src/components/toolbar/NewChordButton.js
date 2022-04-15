@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { newChordImage } from "../assets/images";
-import { fretsChordBox } from "../util/frets";
-import { addDiagram } from "../features/appSlice";
+import { newChordImage } from "../../assets/images";
+import { fretsChordBox } from "../../util/frets";
+import { addDiagram } from "../../features/appSlice";
 
 const NewChordButton = () => {
   const dispatch = useDispatch();

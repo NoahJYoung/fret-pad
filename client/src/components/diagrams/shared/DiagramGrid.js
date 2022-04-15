@@ -1,5 +1,5 @@
-import Fretboard from "./Fretboard";
-import ChordBox from "./ChordBox";
+import Fretboard from "../fretboard/Fretboard";
+import ChordBox from "../chordBox/ChordBox";
 import { useSelector } from "react-redux";
 
 const DiagramGrid = () => {

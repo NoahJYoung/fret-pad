@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setFretMarker, updateFretMarker } from "../features/appSlice";
-import "../css/FretMarker.css";
+import { setFretMarker, updateFretMarker } from "../../../features/appSlice";
+import "../../../css/FretMarker.css";
 
 const FretMarker = ({ pageIndex }) => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.value.diagrams[pageIndex].fretMarker);
+  const state = useSelector(
+    (state) => state.value.diagrams[pageIndex].fretMarker
+  );
   let fretMarker = "0";
 
   return state !== "" ? (

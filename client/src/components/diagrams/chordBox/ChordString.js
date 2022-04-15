@@ -1,8 +1,8 @@
 import React from "react";
 import FingerDiv from "./FingerDiv";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleNote, toggleOpenClose } from "../features/appSlice";
-import "../css/ChordString.css";
+import { toggleNote, toggleOpenClose } from "../../../features/appSlice";
+import "../../../css/ChordString.css";
 
 const ChordString = ({ className, pageIndex, fret, string }) => {
   const stringKey = string;

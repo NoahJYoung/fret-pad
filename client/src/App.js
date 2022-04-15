@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Toolbar from "./components/Toolbar";
+import Toolbar from "./components/toolbar/Toolbar";
 import "./css/App.css";
-import DiagramGrid from "./components/DiagramGrid";
-import PageTitle from "./components/PageTitle";
-import Banner from "./components/Banner";
+import DiagramGrid from "./components/diagrams/shared/DiagramGrid";
+import PageTitle from "./components/diagrams/shared/PageTitle";
+import Banner from "./components/header/Banner";
 
 const App = () => {
   const state = useSelector((state) => state.value.title);

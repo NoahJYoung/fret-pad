@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/NoteDiv.css";
-import sharpsToFlats from "../util/sharpsToFlats";
+import "../../../css/NoteDiv.css";
+import sharpsToFlats from "../../../util/sharpsToFlats";
 
 const NoteDiv = ({ name, toggleNoteDisplay }) => {
   if (toggleNoteDisplay === "sharps") {

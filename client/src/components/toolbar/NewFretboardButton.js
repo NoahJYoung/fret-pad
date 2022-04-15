@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { newFretboardButton } from "../assets/images";
-import { fretsFretboard } from "../util/frets";
-import { addDiagram } from "../features/appSlice";
+import { newFretboardButton } from "../../assets/images";
+import { fretsFretboard } from "../../util/frets";
+import { addDiagram } from "../../features/appSlice";
 
 const NewFretboardButton = () => {
   const dispatch = useDispatch();

@@ -1,9 +1,7 @@
 import React from "react";
-import { printImage } from "../assets/images";
-
+import { printImage } from "../../assets/images";
 
 const PrintButton = () => {
-  
   return (
     <button
       className="printBtn toolbarBtn"

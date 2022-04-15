@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { editTitle, updateTitle } from "../features/appSlice";
-import replaceSymbols from "../util/replaceSymbols";
-import "../css/PageTitle.css";
+import { editTitle, updateTitle } from "../../../features/appSlice";
+import replaceSymbols from "../../../util/replaceSymbols";
+import "../../../css/PageTitle.css";
 
 const PageTitle = ({ title }) => {
   const dispatch = useDispatch();
@@ -21,7 +21,6 @@ const PageTitle = ({ title }) => {
   ) : (
     <div className="titleContainer">
       <input
-        
         onChange={(e) => (tempTitle = e.target.value)}
         type="text"
         className="pageTitleInput"

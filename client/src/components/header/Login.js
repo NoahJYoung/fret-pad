@@ -2,8 +2,8 @@ import { React, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import SignUpModal from "./SignUpModal";
 import SignInModal from "./SignInModal";
-import { logout } from "../features/appSlice";
-import "../css/Login.css";
+import { logout } from "../../features/appSlice";
+import "../../css/Login.css";
 
 const Login = () => {
   const state = useSelector((state) => state.value.user);
@@ -12,7 +12,7 @@ const Login = () => {
   const [signUpModal, setSignUpModal] = useState(false);
   return state ? (
     <div className="userPanel">
-      <h1 className="emailDisplay">{state.email}</h1>
+      <h1 className="emailDisplay">{state.username}</h1>
       <button className="logoutBtn" onClick={() => dispatch(logout())}>
         Logout
       </button>

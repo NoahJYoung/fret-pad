@@ -1,6 +1,6 @@
 import React from "react";
 import ChordString from "./ChordString";
-import "../css/ChordFret.css";
+import "../../../css/ChordFret.css";
 
 const ChordFret = ({ className, pageIndex, fret }) => {
   return (

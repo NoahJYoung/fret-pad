@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useStore } from "react-redux";
-import { removeDiagram, changePagePos } from "../features/appSlice";
+import { removeDiagram, changePagePos } from "../../../features/appSlice";
 import {
   trashImage,
   upArrowImage,
   downArrowImage,
   angleUpImage,
   angleDownImage,
-} from "../assets/images";
-import "../css/DiagramButtons.css";
+} from "../../../assets/images";
+import "../../../css/DiagramButtons.css";
 
 const DiagramButtons = ({ pageIndex, setDiagramOpacity }) => {
   const dispatch = useDispatch();

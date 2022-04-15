@@ -1,7 +1,7 @@
 import React from "react";
 import String from "./String";
-import noteObj from "../util/notesObj";
-import "../css/Fret.css";
+import noteObj from "../../../util/notesObj";
+import "../../../css/Fret.css";
 
 const Fret = ({ className, pageIndex }) => {
   const notes = noteObj;

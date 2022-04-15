@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setName, updateName } from "../features/appSlice";
-import replaceSymbols from "../util/replaceSymbols";
+import { setName, updateName } from "../../../features/appSlice";
+import replaceSymbols from "../../../util/replaceSymbols";
 
 const DiagramName = ({ pageIndex, className }) => {
   const dispatch = useDispatch();

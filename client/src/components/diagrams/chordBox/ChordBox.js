@@ -1,10 +1,10 @@
 import { React, useState } from "react";
 import ChordFret from "./ChordFret";
 import OpenClose from "./OpenClose";
-import DiagramName from "./DiagramName";
+import DiagramName from "../shared/DiagramName";
 import FretMarker from "./FretMarker";
-import DiagramButtons from "./DiagramButtons";
-import "../css/ChordDiagram.css";
+import DiagramButtons from "../shared/DiagramButtons";
+import "../../../css/ChordDiagram.css";
 
 const ChordBox = ({ pageIndex }) => {
   const [diagramOpacity, setDiagramOpacity] = useState("1");

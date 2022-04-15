@@ -1,5 +1,5 @@
 import React from "react";
-import { loadImage } from "../assets/images";
+import { loadImage } from "../../assets/images";
 
 const LoadButton = (props) => {
   return (

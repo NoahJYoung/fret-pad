@@ -1,9 +1,9 @@
 import React from "react";
 import NoteDiv from "./NoteDiv";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleNote } from "../features/appSlice";
-import { playNote } from "../assets/sounds";
-import "../css/String.css";
+import { toggleNote } from "../../../features/appSlice";
+import { playNote } from "../../../assets/sounds";
+import "../../../css/String.css";
 
 const String = ({ className, name, fret, pageIndex }) => {
   const stringKey = className;

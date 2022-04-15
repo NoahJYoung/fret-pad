@@ -1,8 +1,8 @@
 import { React } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../features/appSlice";
+import { login } from "../../features/appSlice";
 import axios from "axios";
-import "../css/SignInModal.css";
+import "../../css/SignInModal.css";
 
 const SignInModal = (props) => {
   const dispatch = useDispatch();
@@ -19,7 +19,13 @@ const SignInModal = (props) => {
       })
       .then((res) => {
         if (res.data !== "") {
-          const user = { email: res.data.email, documents: res.data.documents };
+          const user = {
+            email: res.data.email,
+            username: res.data.username,
+            password: res.data.password,
+            id: res.data._id,
+            documents: res.data.documents,
+          };
           dispatch(login(user));
           props.onClose();
         } else {

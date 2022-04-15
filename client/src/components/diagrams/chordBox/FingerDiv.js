@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/FingerDiv.css";
+import "../../../css/FingerDiv.css";
 
 const FingerDiv = ({ fingerDisplay }) => {
   if (fingerDisplay === 0) {

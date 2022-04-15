@@ -1,7 +1,7 @@
-import "../css/OpenClose.css";
+import "../../../css/OpenClose.css";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleOpenClose } from "../features/appSlice";
+import { toggleOpenClose } from "../../../features/appSlice";
 
 const OpenClose = ({ pageIndex, stringIndex }) => {
   const dispatch = useDispatch();

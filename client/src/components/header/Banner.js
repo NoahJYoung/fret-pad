@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./Login";
-import { fretPadLogo } from "../assets/images";
-import "../css/Banner.css";
+import { fretPadLogo } from "../../assets/images";
+import "../../css/Banner.css";
 
 const Banner = () => {
   return (

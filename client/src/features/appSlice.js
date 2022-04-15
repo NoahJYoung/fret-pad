@@ -4,6 +4,7 @@ const initialStateValue = {
   user: null,
   title: "",
   diagrams: [],
+  documentId: null,
   settings: { sound: true },
 };
 
@@ -15,7 +16,12 @@ export const appSlice = createSlice({
       state.value.user = action.payload;
     },
     logout: (state) => {
-      state.value.user = null;
+      state.value = initialStateValue;
+    },
+    updateDocs: (state, action) => {
+      state.value.user.documents = action.payload;
+      state.value.documentId =
+        state.value.user.documents[state.value.user.documents.length - 1]._id;
     },
     editTitle: (state, action) => {
       state.value.title = action.payload;
@@ -31,13 +37,15 @@ export const appSlice = createSlice({
         (i) => state.value.diagrams.indexOf(i) !== action.payload.deleteIndex
       );
     },
-    clearDiagrams: (state) => {
+    newDocument: (state) => {
       state.value.diagrams = [];
       state.value.title = "";
+      state.value.documentId = null;
     },
     load: (state, action) => {
       state.value.title = action.payload.title;
       state.value.diagrams = action.payload.diagrams;
+      state.value.documentId = action.payload.id;
     },
 
     changePagePos: (state, action) => {
@@ -84,11 +92,12 @@ export const appSlice = createSlice({
 export const {
   login,
   logout,
+  updateDocs,
   editTitle,
   updateTitle,
   addDiagram,
   removeDiagram,
-  clearDiagrams,
+  newDocument,
   load,
   toggle,
   changePagePos,
