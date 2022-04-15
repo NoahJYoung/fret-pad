@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
+
+const document = require("./document");
 
 const userSchema = new Schema(
   {
@@ -11,14 +12,18 @@ const userSchema = new Schema(
       trim: true,
       lowercase: true,
     },
+    username: {
+      type: String,
+      unique: true,
+      required: "Please choose a username",
+      trim: true,
+      lowercase: true,
+    },
     password: {
       type: String,
       requred: true,
     },
-    documents: {
-      type: Array,
-      required: true,
-    },
+    documents: [document.schema],
   },
   { timestamps: true }
 );
