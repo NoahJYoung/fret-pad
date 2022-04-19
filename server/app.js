@@ -137,5 +137,5 @@ const dbURI = process.env.MONGODB_URL;
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(PORT))
+  .then(() => app.listen(process.env.PORT || PORT))
   .catch((err) => console.log(err));
