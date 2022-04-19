@@ -23,7 +23,7 @@ const SaveButton = () => {
         });
     } else {
       axios
-        .post("http://localhost:9000/save-doc", {
+        .post("/save-doc", {
           user: state.user,
           title: state.title,
           diagrams: state.diagrams,

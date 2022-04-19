@@ -16,22 +16,9 @@ app.use(
   })
 );
 
-const PORT = 9000;
-//MONGOOSE
-const dbURI = process.env.MONGODB_URL;
+const PORT = 3000;
 
-mongoose
-  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(PORT))
-  .catch((err) => console.log(err));
-
-//ROUTER
-
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-
-app.get("/", (req, res) => {
-  res.send("");
-});
+app.use(express.static(path.resolve(__dirname, "../client/build/")));
 
 //LOGIN ROUTER
 
@@ -138,3 +125,17 @@ app.delete("/documents", (req, res) => {
       });
   });
 });
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../client", "build", "static", "index.html")
+  );
+});
+
+//MONGOOSE
+const dbURI = process.env.MONGODB_URL;
+
+mongoose
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(PORT))
+  .catch((err) => console.log(err));
