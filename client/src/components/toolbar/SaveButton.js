@@ -11,7 +11,7 @@ const SaveButton = () => {
     dispatch(setLoading(true));
     if (state.documentId) {
       axios
-        .patch("http://localhost:9000/save-doc", {
+        .patch("/save-doc", {
           user: state.user,
           documentId: state.documentId,
           title: state.title,

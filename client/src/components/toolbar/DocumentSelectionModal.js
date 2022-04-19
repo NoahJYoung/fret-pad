@@ -18,7 +18,7 @@ const DocumentSelectionModal = (props) => {
     } else {
       dispatch(setLoading(true));
       axios
-        .delete("http://localhost:9000/documents", {
+        .delete("/documents", {
           params: { documentId: id, username: state.user.username },
         })
         .then((res) => {

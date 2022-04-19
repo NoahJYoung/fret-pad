@@ -15,7 +15,7 @@ const SignUpModal = (props) => {
     dispatch(setLoading(true));
     if (event.target.pass.value === event.target.passConfirm.value) {
       axios
-        .post("http://localhost:9000/new-user", {
+        .post("/new-user", {
           email: event.target.email.value,
           username: event.target.username.value,
           password: event.target.pass.value,

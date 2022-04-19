@@ -14,7 +14,7 @@ const SignInModal = (props) => {
     event.preventDefault();
     dispatch(setLoading(true));
     axios
-      .post("http://localhost:9000/login", {
+      .post("/login", {
         email: event.target.email.value,
         password: event.target.pass.value,
       })
