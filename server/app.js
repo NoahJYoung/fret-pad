@@ -60,6 +60,11 @@ app.post("/new-user", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      if (err.code === 11000) {
+        res
+          .status(409)
+          .send({ error: "Oops, an account already exists with this email." });
+      }
     });
 });
 
@@ -119,7 +124,7 @@ app.post("/save-doc", (req, res) => {
 //DELETE DOCUMENT
 
 app.delete("/documents", (req, res) => {
-  User.findOne({ id: req.query.user.id }).then((user) => {
+  User.findOne({ username: req.query.username }).then((user) => {
     user.documents.id(req.query.documentId).remove();
     user
       .save()

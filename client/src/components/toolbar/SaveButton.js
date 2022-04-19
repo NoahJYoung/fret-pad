@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateDocs } from "../../features/appSlice";
+import { updateDocs, setLoading } from "../../features/appSlice";
 import { saveImage } from "../../assets/images";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ const SaveButton = () => {
   const state = useSelector((state) => state.value);
   const dispatch = useDispatch();
   const handleSave = () => {
+    dispatch(setLoading(true));
     if (state.documentId) {
       axios
         .patch("http://localhost:9000/save-doc", {
@@ -17,9 +18,8 @@ const SaveButton = () => {
           diagrams: state.diagrams,
         })
         .then((res) => {
-          console.log(res);
+          dispatch(setLoading(false));
           dispatch(updateDocs(res.data.documents));
-          alert("Document saved successfully!");
         });
     } else {
       axios
@@ -29,9 +29,8 @@ const SaveButton = () => {
           diagrams: state.diagrams,
         })
         .then((res) => {
-          console.log(res);
+          dispatch(setLoading(false));
           dispatch(updateDocs(res.data.documents));
-          alert("Document saved successfully!");
         });
     }
   };

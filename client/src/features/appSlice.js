@@ -6,6 +6,7 @@ const initialStateValue = {
   diagrams: [],
   documentId: null,
   settings: { sound: true },
+  loading: false,
 };
 
 export const appSlice = createSlice({
@@ -17,6 +18,9 @@ export const appSlice = createSlice({
     },
     logout: (state) => {
       state.value = initialStateValue;
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
     },
     updateDocs: (state, action) => {
       state.value.user.documents = action.payload;
@@ -92,6 +96,7 @@ export const appSlice = createSlice({
 export const {
   login,
   logout,
+  setLoading,
   updateDocs,
   editTitle,
   updateTitle,

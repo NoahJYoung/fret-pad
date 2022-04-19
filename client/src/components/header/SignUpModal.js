@@ -1,7 +1,7 @@
 import { React } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { login } from "../../features/appSlice";
+import { login, setLoading } from "../../features/appSlice";
 import "../../css/SignUpModal.css";
 
 const SignUpModal = (props) => {
@@ -12,6 +12,7 @@ const SignUpModal = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch(setLoading(true));
     if (event.target.pass.value === event.target.passConfirm.value) {
       axios
         .post("http://localhost:9000/new-user", {
@@ -27,10 +28,16 @@ const SignUpModal = (props) => {
             id: res.data._id,
             documents: res.data.documents,
           };
+          dispatch(setLoading(false));
           dispatch(login(user));
           props.onClose();
+        })
+        .catch((err) => {
+          dispatch(setLoading(false));
+          alert(err.response.data.error);
         });
     } else {
+      dispatch(setLoading(false));
       alert("passwords don't match");
     }
   };

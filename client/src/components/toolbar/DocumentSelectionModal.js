@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { load, updateDocs } from "../../features/appSlice";
+import { load, updateDocs, setLoading } from "../../features/appSlice";
 import { trashImage } from "../../assets/images";
 import "../../css/DocumentSelectionModal.css";
 
@@ -11,13 +11,21 @@ const DocumentSelectionModal = (props) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    axios
-      .delete("http://localhost:9000/documents", {
-        params: { documentId: id, user: state.user.username },
-      })
-      .then((res) => {
-        dispatch(updateDocs(res.data.documents));
-      });
+    if (id === state.documentId) {
+      alert(
+        "Can't delete a document you're currently editing. To delete this document, open another document first."
+      );
+    } else {
+      dispatch(setLoading(true));
+      axios
+        .delete("http://localhost:9000/documents", {
+          params: { documentId: id, username: state.user.username },
+        })
+        .then((res) => {
+          dispatch(setLoading(false));
+          dispatch(updateDocs(res.data.documents));
+        });
+    }
   };
 
   if (!props.show) {
@@ -49,11 +57,13 @@ const DocumentSelectionModal = (props) => {
                   >
                     Load
                   </button>
-                  <button className="docDeleteBtn">
+                  <button
+                    onClick={() => {
+                      handleDelete(doc._id);
+                    }}
+                    className="docDeleteBtn"
+                  >
                     <img
-                      onClick={() => {
-                        handleDelete(doc._id);
-                      }}
                       className="docDeleteImg"
                       alt="delete button"
                       src={trashImage}

@@ -1,6 +1,6 @@
 import { React } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../features/appSlice";
+import { login, setLoading } from "../../features/appSlice";
 import axios from "axios";
 import "../../css/SignInModal.css";
 
@@ -12,6 +12,7 @@ const SignInModal = (props) => {
 
   const handleLogin = (event) => {
     event.preventDefault();
+    dispatch(setLoading(true));
     axios
       .post("http://localhost:9000/login", {
         email: event.target.email.value,
@@ -26,9 +27,11 @@ const SignInModal = (props) => {
             id: res.data._id,
             documents: res.data.documents,
           };
+          dispatch(setLoading(false));
           dispatch(login(user));
           props.onClose();
         } else {
+          dispatch(setLoading(false));
           alert("Incorrect email or password");
         }
       });

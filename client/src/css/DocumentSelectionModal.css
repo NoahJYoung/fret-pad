@@ -50,6 +50,10 @@
     height: 8rem;
 }
 
+.docList::-webkit-scrollbar {
+    display: none;
+}
+
 .docModalClose {
     width: 3rem;
     align-self: center;
