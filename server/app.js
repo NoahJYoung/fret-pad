@@ -18,7 +18,7 @@ app.use(
 
 const PORT = 9000;
 //MONGOOSE
-const dbURI = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@fret-pad-cluster.ukxyo.mongodb.net/fret-pad?retryWrites=true&w=majority`;
+const dbURI = process.env.MONGODB_URL;
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -26,6 +26,8 @@ mongoose
   .catch((err) => console.log(err));
 
 //ROUTER
+
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.get("/", (req, res) => {
   res.send("");
