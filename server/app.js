@@ -2,22 +2,16 @@ const express = require("express");
 const path = require("path");
 require("dotenv").config();
 const mongoose = require("mongoose");
-const cors = require("cors");
 const bodyParser = require("body-parser");
 const Document = require("./models/document");
 const User = require("./models/user");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(
-  cors({
-    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-    origin: "*",
-  })
-);
 
 const PORT = 3000;
 
+// REACT MIDDLEWARE
 app.use(express.static(path.resolve(__dirname, "../client/build/")));
 
 //LOGIN ROUTER
@@ -127,9 +121,11 @@ app.delete("/documents", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../client", "build", "static", "index.html")
-  );
+  res
+    .status(200)
+    .sendFile(
+      path.join(__dirname, "../client", "build", "static", "index.html")
+    );
 });
 
 //MONGOOSE
